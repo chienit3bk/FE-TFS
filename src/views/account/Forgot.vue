@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <IntroHeader />
     <div class="form">
       <form @submit.prevent="handleSubmit" id="sign-up-form">
         <h1>SENT TO EMAIL</h1>
@@ -21,14 +20,10 @@
         </div>
       </form>
     </div>
-    <Footer />
   </div>
 </template>
-
 <script>
 import axios from "axios";
-import IntroHeader from "../../layouts/IntroHeader.vue";
-import Footer from "../../layouts/Footer.vue";
 import { mapActions, mapState } from "vuex";
 export default {
   name: "Forgot",
@@ -72,10 +67,6 @@ export default {
       }
     },
     ...mapActions(["submitEmail"]),
-  },
-  components: {
-    IntroHeader,
-    Footer,
   },
 };
 </script>

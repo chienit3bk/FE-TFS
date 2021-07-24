@@ -6,17 +6,17 @@
         <h2>{{ product.name }}</h2>
       </div>
       <div class="product-detail">
-        <h2>{{ product.ListOptions[0].price }}</h2>
+        <h2>{{ product.ListOptions[0].price }} đ</h2>
       </div>
       <div class="product-detail">
-        <h3>
+        <h2>
           <router-link
             type="button"
             class="btn btn-primary btn-lg"
             :to="'/products/' + product.id"
             >Xem thông tin chi tiết</router-link
           >
-        </h3>
+        </h2>
       </div>
 
     </div>

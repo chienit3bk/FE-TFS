@@ -12,19 +12,36 @@
           <span class="badge badge-danger badge-pill">{{ cart.length }}</span>
         </router-link>
       </li>
-      <li><a href="#">Hỗ trợ</a></li>
-      <li><router-link to="/account/sign-in">Đăng nhập</router-link></li>
-      <li><router-link to="/account/sign-up">Đăng ký</router-link></li>
+      <li><router-link to="/support">Hỗ trợ</router-link></li>
+      <li v-if="passwordToken"><router-link to="/" @click="onClick()">Đăng xuất</router-link></li>
+      <span v-else
+        ><li><router-link to="/account/sign-in">Đăng nhập</router-link></li>
+        <li><router-link to="/account/sign-up">Đăng ký</router-link></li></span
+      >
     </ul>
   </header>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapState, mapActions } from "vuex";
 export default {
   name: "IntroHeader",
+  // data() {
+  //   return {
+  //     check: false,
+  //   };
+  // },
   computed: {
+    ...mapState({
+      passwordToken: (state) => state.account.passwordToken,
+    }),
     ...mapGetters("product", ["cart"]),
+  },
+  methods: {
+    ...mapActions(["submitPasswordToken"]),
+    onClick() {
+      return this.submitPasswordToken("");
+    },
   },
 };
 </script>
@@ -110,5 +127,4 @@ header {
   padding-left: 0.6em;
   border-radius: 10rem;
 }
-
 </style>

@@ -1,6 +1,5 @@
 <template>
   <div class="container-fluid">
-    <IntroHeader />
     <div class="row d-flex justify-content-center">
       <div class="col-6">
         <div class="card text-left shadow-md">
@@ -24,7 +23,6 @@
 
 <script>
 import { mapGetters, mapActions } from "vuex";
-import IntroHeader from "../../layouts/IntroHeader.vue";
 import AddToCart from "../../components//AddToCart.vue";
 export default {
   data() {
@@ -35,7 +33,7 @@ export default {
   computed: {
     ...mapGetters("product", ["product"]),
   },
-  components: { AddToCart, IntroHeader },
+  components: { AddToCart,},
   methods: {
     ...mapActions("product", ["productDetails"]),
   },
@@ -45,17 +43,21 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
-.container-fluid {
-  padding: 30px;
+.container {
+  height: 100%;
   width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  color: #5a5a5a;
+  text-rendering: optimizeLegibility;
 }
 .justify-content-center {
   justify-content: center !important;
@@ -75,6 +77,9 @@ export default {
   max-width: 50%;
 }
 
+.col-3 {
+  margin-left: -3%;
+}
 .col,
 .col-1,
 .col-10,
@@ -286,7 +291,8 @@ input {
   border-radius: 0.25rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-<style > button,
+
+button,
 input {
   overflow: visible;
 }

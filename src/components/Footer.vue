@@ -85,6 +85,7 @@ footer {
   font-family: "Lato", sans-serif;
   height: 35vh;
   font-size: 20px;
+  
 }
 
 .col-footer {

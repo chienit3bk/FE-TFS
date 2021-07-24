@@ -10,9 +10,12 @@ const routes = [
     name: "Home",
     component: Home,
   },
-
-
-  // Account Page
+  {
+    path: "/support",
+    name: "Support",
+    component: () => import("../views/support/Support.vue"),
+  },
+  //account view
   {
     path: "/account/sign-in",
     name: "SignIn",

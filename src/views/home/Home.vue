@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <IntroHeader />
     <div class="slider-header">
       <h1>Sony Tivi</h1>
       <div class="tiviSelection">
@@ -13,7 +12,7 @@
           :dragging-distance="200"
           :breakpoints="{ 800: { visibleSlides: 2, slideMultiple: 2 } }"
         >
-          <vueper-slide v-for="i in 10" :key="i" :title="i.toString()" />
+          <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image"/>
         </vueper-slides>
       </div>
     </div>
@@ -48,25 +47,14 @@
         <h6 type="button" class="google-tivi">GOOGLE TV</h6>
       </div>
     </nav>
-    <div style="padding: 25px">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4" v-for="product in products" :key="product.id">
-            <Product :product="product" />
-          </div>
-        </div>
-      </div>
-    </div>
     <Products />
-    <Footer />
   </div>
 </template>
 
 <script>
-import IntroHeader from "../../layouts/IntroHeader.vue";
-import Footer from "../../layouts/Footer.vue";
+// import IntroHeader from "../../layouts/IntroHeader.vue";
+// import Footer from "../../layouts/Footer.vue";
 import Products from "./Products.vue";
-// import ProductsLED from "./ProductsLED.vue";
 import { VueperSlides, VueperSlide } from "vueperslides";
 import "vueperslides/dist/vueperslides.css";
 
@@ -77,24 +65,25 @@ export default {
   data() {
     return {
       slides: [
-        require("../../assets/imgs/tv1.webp"),
-        require("../../assets/imgs/tv1.webp"),
-        require("../../assets/imgs/tv1.webp"),
-        require("../../assets/imgs/tv1.webp"),
-        require("../../assets/imgs/tv1.webp"),
-        require("../../assets/imgs/tv1.webp"),
-        require("../../assets/imgs/tv1.webp"),
-        require("../../assets/imgs/tv1.webp"),
+        { image: require("../../assets/imgs/tv1.webp") },
+        { image: require("../../assets/imgs/tv1.webp") },
+        { image: require("../../assets/imgs/tv1.webp") },
+        { image: require("../../assets/imgs/tv1.webp") },
+        { image: require("../../assets/imgs/tv1.webp") },
+        { image: require("../../assets/imgs/tv1.webp") },
+        { image: require("../../assets/imgs/tv1.webp") },
+        { image: require("../../assets/imgs/tv1.webp") },
+        { image: require("../../assets/imgs/tv1.webp") },
+        { image: require("../../assets/imgs/tv1.webp") },
       ],
     };
   },
   components: {
     VueperSlides,
     VueperSlide,
-    IntroHeader,
+    // IntroHeader,
     Products,
-    // ProductsLED,
-    Footer,
+    // Footer,
   },
   computed: {
     ...mapGetters("product", ["products"]),
@@ -179,37 +168,5 @@ h1 {
 
 hr.title {
   border: 2px solid red;
-}
-.product-center {
-  width: 80%;
-  min-height: 100vh;
-  background-color: #eee;
-
-  align-items: center;
-}
-.product-center .product-image {
-  overflow: hidden;
-  position: relative;
-}
-.product-center .product-image img {
-  width: 90%;
-  height: auto;
-}
-.product-center .product-content {
-  padding: 12px 0;
-}
-.product-center .info span {
-  color: #333;
-  text-decoration: line-through;
-  margin-right: 3px;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 30px;
-  max-width: 1280px;
-  padding: 25px;
-  margin: 0 auto;
 }
 </style>

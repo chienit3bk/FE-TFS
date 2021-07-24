@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <IntroHeader />
     <div class="form">
       <form @submit.prevent="handleSubmit" id="sign-up-form">
         <h1>SIGN UP</h1>
@@ -84,14 +83,11 @@
         </div>
       </form>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import IntroHeader from "../../layouts/IntroHeader.vue";
-import Footer from "../../layouts/Footer.vue";
 export default {
   name: "SignUp",
   data() {
@@ -132,10 +128,6 @@ export default {
         alert(err.response.data.message)
       }
     },
-  },
-  components: {
-    IntroHeader,
-    Footer,
   },
 };
 </script>

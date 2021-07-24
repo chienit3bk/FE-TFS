@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <IntroHeader />
     <div class="form">
       <form @submit.prevent="handleSubmit" id="sign-in-form">
         <h1>SIGN IN</h1>
@@ -32,15 +31,12 @@
         </h5>
       </form>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
 // import MainHeader from "../layouts/MainHeader.vue";
 import axios from "axios";
-import Footer from "../../layouts/Footer.vue";
-import IntroHeader from "../../layouts/IntroHeader.vue";
 import { mapState, mapActions } from "vuex";
 export default {
   name: "SignIn",
@@ -86,10 +82,6 @@ export default {
       }
     },
     ...mapActions(["submitPasswordToken"]),
-  },
-  components: {
-    IntroHeader,
-    Footer,
   },
 };
 </script>

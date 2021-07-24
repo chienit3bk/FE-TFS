@@ -51,18 +51,20 @@
           <div class="detail-info-1">
             <label for="detail">Chi tiết mô tả</label>
             <br />
-            <input type="text" class="detail" placeholder="Thêm chi tiết" />
-            <input type="text" class="detail" placeholder="Thêm chi tiết" />
-            <input type="text" class="detail" placeholder="Thêm chi tiết" />
-            <input type="text" class="detail" placeholder="Thêm chi tiết" />
+            <input type="text" class="detail" placeholder="Thêm chi tiết" v-model="newDescription"/>
+            <button @click="ListDescriptions.push(newDescription)">Thêm</button>
+            <div v-for="(detail, index) in ListDescriptions" :key="index">
+              <span>{{detail}}</span>  
+            </div>  
           </div>
           <div class="detail-info-1">
             <label for="images">Thêm đường dẫn ảnh</label>
             <br />
-            <input type="text" class="images" placeholder="Link" />
-            <input type="text" class="images" placeholder="Link" />
-            <input type="text" class="images" placeholder="Link" />
-            <input type="text" class="images" placeholder="Link" />
+            <input type="text" class="images" placeholder="Link" v-model="newImage" />
+            <button @click="ListImages.push(newImage)">Thêm</button>
+            <div v-for="(linkImage, index) in ListImages" :key="index">
+              <span>{{linkImage}}</span>  
+            </div>  
           </div>
           <div class="detail-info-2">
             <div class="detail-info-3">
@@ -90,7 +92,6 @@
     </div>
   </main>
 </template>
-
 <script>
 export default {
   name: "UploadProduct",
@@ -101,9 +102,16 @@ export default {
       technology: "",
       resolution: "",
       type: "",
-      descriptions: [],
-      listImages: [],
-      listOptions: [],
+      newDescription: '',
+      ListDescriptions: [],
+      newSize: '',
+      ListSizes: [],
+      newPrice: '',
+      ListPrices: [],
+      newImage: '',
+      ListImages: [],
+      newOption: '',
+      ListOptions: [],
     };
   },
 };
@@ -115,8 +123,8 @@ export default {
   font-family: sans-serif;
   box-sizing: border-box;
 }
-
 main {
+  margin-top: 2rem;
   background-image: url(https://cdn.pixabay.com/photo/2015/09/28/21/32/the-palm-962785_1280.jpg);
   background-repeat: no-repeat;
   background-size: cover;
@@ -128,16 +136,13 @@ main {
   padding: 15px;
   border: none;
   border-radius: 10px;
-
   display: flex;
   flex-direction: column;
 }
-
 h1 {
-  color: #da9d18;
+  color: #DA9D18;
   font-size: 20px;
 }
-
 .add-a-product-form {
   margin: 20px auto;
   color: white;
@@ -145,67 +150,55 @@ h1 {
   padding: 15px;
   border: none;
   border-radius: 10px;
-
   display: flex;
   flex-direction: column;
 }
 .general-info {
   margin-top: 20px;
 }
-
 .input-box {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-
 .add-a-product-form input {
   height: 33px;
   width: 100%;
   margin: 10px 0px;
   padding: 7.5px 15px;
   background-color: rgba(116, 113, 113, 0.5);
-
-  border: 1px solid #cccccc;
+  border: 1px solid #CCCCCC;
   outline: none;
   font-size: 16px;
-
   color: white;
 }
-
 .add-a-product-form select {
   height: 33px;
   width: 100%;
   margin: 10px 0px;
   padding: 7.5px 15px;
   background-color: rgba(116, 113, 113, 0.5);
-
-  border: 1px solid #cccccc;
+  border: 1px solid #CCCCCC;
   outline: none;
   font-size: 16px;
-
   color: white;
 }
-
 .detail-info {
   display: flex;
   flex-direction: row;
 }
-
 .detail-info-1 {
   width: 40%;
   margin: 10px;
 }
-
 .detail-info-2 {
   width: 20%;
   display: flex;
   flex-direction: row;
-  border: 1px solid #cccccc;
+  border: 1px solid #CCCCCC;
 }
 .detail-info-3 {
   margin: 10px;
 }
-
 .btn-box {
   text-align: right;
   margin-top: 10px;
@@ -215,7 +208,7 @@ h1 {
   width: 150px;
   border-radius: 2px;
   background-color: #009999;
-  color: #ffffff;
+  color: #FFFFFF;
   border: none;
   outline: none;
 }

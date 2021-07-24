@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <IntroHeader />
     <div class="form">
       <form @submit.prevent="handleSubmit" id="sign-up-form">
         <h1>Write code had been sent to your email</h1>
@@ -33,14 +32,11 @@
         </div>
       </form>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import IntroHeader from "../../layouts/IntroHeader.vue";
-import Footer from "../../layouts/Footer.vue";
 import { mapState } from "vuex";
 export default {
   name: "ForgotStep2",
@@ -80,10 +76,6 @@ export default {
         alert(err.response.data.message);
       }
     },
-  },
-  components: {
-    IntroHeader,
-    Footer,
   },
 };
 </script>

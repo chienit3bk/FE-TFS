@@ -1,8 +1,8 @@
 <template>
   <div style="padding: 25px;">
     <div class="container">
-      <div class="row">
-        <div class="col-md-4" v-for="product in products" :key="product.id">
+      <div class="colume">
+        <div class="row" v-for="product in products" :key="product.id">
           <Product :product="product" />
         </div>
       </div>
@@ -27,6 +27,15 @@ export default {
 };
 </script>
 
-<style>
-
+<style scoped>
+.colume {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 25px;
+  margin: 0 auto;
+}
+.row {
+  max-width: 30%;
+  height: 30%; 
+}
 </style>

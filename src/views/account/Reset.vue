@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <IntroHeader />
     <div class="form">
       <form @submit.prevent="handleSubmit" id="reset-form">
         <h1>CHANGE PASSWORD</h1>
@@ -31,14 +30,11 @@
         <button type="submit" form="reset-form" id="btn">Confirm</button>
       </form>
     </div>
-    <Footer />
   </div>
 </template>
 
 <script>
 // import MainHeader from "../layouts/MainHeader.vue";
-import Footer from "../../layouts/Footer.vue";
-import IntroHeader from "../../layouts/IntroHeader.vue";
 export default {
   name: "Reset",
   data() {
@@ -55,10 +51,6 @@ export default {
       };
       console.log(data);
     },
-  },
-  components: {
-    IntroHeader,
-    Footer,
   },
 };
 </script>
