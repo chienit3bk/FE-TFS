@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-# Front-end
 =======
 # Front-End
-
->>>>>>> 8217da2b8cd975b278ff55bc1d6e6dfa1b703c0e
 
 ## Project setup
 ```
