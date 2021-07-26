@@ -122,7 +122,7 @@ export default {
 };
 </script>
 <style scoped>
-.container{
+.container {
   height: 50%;
   width: 100%;
 }
@@ -198,10 +198,11 @@ button:hover {
 .chart {
   display: block;
   width: 100%;
-  height: 10%;
+  height: 30% !important;
 }
 .h {
-  width: 100%;
-  height: 10%;
+  width: 90%;
+  margin-left: 4rem;
+  height: 80%;
 }
 </style>

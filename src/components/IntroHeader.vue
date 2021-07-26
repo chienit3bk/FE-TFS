@@ -13,9 +13,16 @@
         </router-link>
       </li>
       <li><router-link to="/support">Hỗ trợ</router-link></li>
-      <li v-if="passwordToken">
-        <router-link to="/"><a v-on:click="onClick">Đăng xuất</a></router-link>
-      </li>
+
+      <span v-if="passwordToken">
+        <li><router-link to="/statistical">Thống kê</router-link></li>
+        <li><router-link to="/upload">Tải lên</router-link></li>
+        <li>
+          <router-link to="/"
+            ><a v-on:click="onClick">Đăng xuất</a></router-link
+          >
+        </li>
+      </span>
       <span v-else
         ><li><router-link to="/account/sign-in">Đăng nhập</router-link></li>
         <li><router-link to="/account/sign-up">Đăng ký</router-link></li></span

@@ -12,11 +12,32 @@ const routes = [
   },
   {
     path: "/support",
-    // name: "Support",
+    name: "Support",
+    // name: "Statistical",
+    component: () => import("../views/support/Support.vue"),
+  },
+
+  //account view
+  {
+    path: "/statistical",
     name: "Statistical",
     component: () => import("../views/manager/Statistical.vue"),
   },
-  //account view
+  {
+    path: "/manager/order",
+    name: "ManagerOrder",
+    component: () => import("../views/manager/ManagerOrder.vue"),
+  },
+  {
+    path: "/manager/order",
+    name: "ManagerProduct",
+    component: () => import("../views/manager/ManagerProduct.vue"),
+  },
+  {
+    path: "/upload",
+    name: "UploadProduct",
+    component: () => import("../views/upload/UploadProduct.vue"),
+  },
   {
     path: "/account/sign-in",
     name: "SignIn",
@@ -66,16 +87,6 @@ const routes = [
     path: "/products/:idProduct",
     component: () => import("../views/details/ProductDetail.vue"),
   },
-  {
-    path: "/upload",
-    name: "UploadProduct",
-    component: () => import("../views/upload/UploadProduct.vue"),
-  },
-  // {
-  //   path: "/statistical",
-  //   name: "Statistical",
-  //   component: () => import("../views/manager/Statistical.vue"),
-  // },
 ];
 
 const router = new VueRouter({
