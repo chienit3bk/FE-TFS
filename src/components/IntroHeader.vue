@@ -13,7 +13,9 @@
         </router-link>
       </li>
       <li><router-link to="/support">Hỗ trợ</router-link></li>
-      <li v-if="passwordToken"><router-link to="/" @click="onClick()">Đăng xuất</router-link></li>
+      <li v-if="passwordToken">
+        <router-link to="/"><a v-on:click="onClick">Đăng xuất</a></router-link>
+      </li>
       <span v-else
         ><li><router-link to="/account/sign-in">Đăng nhập</router-link></li>
         <li><router-link to="/account/sign-up">Đăng ký</router-link></li></span
@@ -26,11 +28,6 @@
 import { mapGetters, mapState, mapActions } from "vuex";
 export default {
   name: "IntroHeader",
-  // data() {
-  //   return {
-  //     check: false,
-  //   };
-  // },
   computed: {
     ...mapState({
       passwordToken: (state) => state.account.passwordToken,
@@ -39,7 +36,7 @@ export default {
   },
   methods: {
     ...mapActions(["submitPasswordToken"]),
-    onClick() {
+    onClick: function () {
       return this.submitPasswordToken("");
     },
   },

@@ -12,8 +12,9 @@ const routes = [
   },
   {
     path: "/support",
-    name: "Support",
-    component: () => import("../views/support/Support.vue"),
+    // name: "Support",
+    name: "Statistical",
+    component: () => import("../views/manager/Statistical.vue"),
   },
   //account view
   {
@@ -70,7 +71,11 @@ const routes = [
     name: "UploadProduct",
     component: () => import("../views/upload/UploadProduct.vue"),
   },
-
+  // {
+  //   path: "/statistical",
+  //   name: "Statistical",
+  //   component: () => import("../views/manager/Statistical.vue"),
+  // },
 ];
 
 const router = new VueRouter({
