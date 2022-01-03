@@ -76,7 +76,7 @@ export default {
       try {
         const res = await axios({
           method: "GET",
-          url: "http://localhost:8080/statistic",
+          url: "http://128.199.84.111:8080/statistic",
           data: {},
           headers: {
             "Access-Control-Allow-Origin": "*",

@@ -76,7 +76,7 @@ export default {
       try {
         const res = await axios({
           method: "DELETE",
-          url: "http://localhost:8080/orders",
+          url: "http://128.199.84.111:8080/orders",
           data: {},
           headers: {
             "Access-Control-Allow-Origin": "*",

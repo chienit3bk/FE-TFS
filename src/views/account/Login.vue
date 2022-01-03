@@ -6,7 +6,7 @@
         <div class="input" id="email-phone">
           <input
             type="text"
-            id="email-phone"
+            id="emai"
             v-model="username"
             placeholder="Username"
           />
@@ -56,7 +56,7 @@ export default {
       try {
         const res = await axios({
           method: "POST",
-          url: "http://localhost:8080/login",
+          url: "http://128.199.84.111:8080/login",
           
           data: {
             username: this.username,

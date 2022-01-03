@@ -176,7 +176,7 @@ export default {
       try {
         const res = await axios({
           method: "POST",
-          url: "http://localhost:8080/products/importfile",
+          url: "http://128.199.84.111:8080/products/importfile",
           data: {
             file: this.filedata,
           },
@@ -197,7 +197,7 @@ export default {
       try {
         const res = await axios({
           method: "POST",
-          url: "http://localhost:8080/products",
+          url: "http://128.199.84.111:8080/products",
           data: {
             name: this.name,
             link_detail: "",

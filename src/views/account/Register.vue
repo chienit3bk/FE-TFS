@@ -104,7 +104,7 @@ export default {
       try {
         const res = await axios({
           method: "POST",
-          url: "http://localhost:8080/signup",
+          url: "http://128.199.84.111:8080/signup",
           data: {
             email: this.email,
             username: this.username,

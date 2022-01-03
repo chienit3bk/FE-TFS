@@ -56,7 +56,7 @@ export default {
       try {
         const res = await axios({
           method: "POST",
-          url: "http://localhost:8080/forgotpassword/newpass",
+          url: "http://128.199.84.111:8080/forgotpassword/newpass",
           data: {
             email: this.email,
             newpass: this.password,

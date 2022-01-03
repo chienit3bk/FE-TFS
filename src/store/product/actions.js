@@ -2,7 +2,7 @@ import axios from "axios";
 
 export function getProducts({ commit }) {
   axios
-    .get("http://localhost:8080/products", {
+    .get("http://128.199.84.111:8080/products", {
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
@@ -18,7 +18,7 @@ export function getProducts({ commit }) {
 }
 export function getLEDProducts({ commit }) {
   axios
-    .get("http://localhost:8080/products/technology?value=LED", {
+    .get("http://128.199.84.111:8080/products/technology?value=LED", {
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
@@ -32,10 +32,29 @@ export function getLEDProducts({ commit }) {
       console.log(error);
     });
 }
+export function getProductByName({ commit }, name) {
+  axios
+    .get("http://128.199.84.111:8080/search_db", {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "application/json",
+      },
+      params: {
+        name: name,
+      },
+      data: {}
+    })
+    .then((response) => {
+      commit("setProducts", response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
 
 export function productDetails({ commit }, id) {
   axios
-    .get(`http://localhost:8080/products/${id}`, {
+    .get(`http://128.199.84.111:8080/products/${id}`, {
       headers: {
         "Access-Control-Allow-Origin": "*",
         "Content-Type": "application/json",
